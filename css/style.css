@@ -1,0 +1,15 @@
+
+.row {
+  margin-bottom: 0;
+}
+
+.info_show_all table, th, td {
+  border: 1px solid #d6d6d6;
+  text-align: center;
+}
+.info_show_all{
+	padding: 50px 0;
+}
+.main-login-form {
+  padding-top: 20px;
+}
