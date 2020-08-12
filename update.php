@@ -22,7 +22,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Sristiweb</title>
+	<title>Registration</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/materialize.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -31,7 +31,7 @@
 <body>
 	<nav class="purple darken-3" role="navigation">
 	    <div class="nav-wrapper container">
-	      <a id="logo-container" href="#" class="brand-logo">Sristiweb.com</a>
+	      <a id="logo-container" href="#" class="brand-logo">Registration form</a>
 
 	      <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
 	        <li><a href="#"></a></li>

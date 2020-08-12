@@ -14,7 +14,10 @@ if (!$conn) {
 
  if(isset($_POST['save'])){
 	   $checkBox= $image= $image_name= $file= "";
-	 
+echo "<pre>";
+var_dump($_POST['gender']);
+echo "</pre>";
+exit();
 	 if(empty($_POST['gender'])){
 		$_POST['gender'] ="";
 	 }
@@ -74,9 +77,12 @@ if (!$conn) {
         $file_type = $_FILES['photo']['type'];
         $folder="img/";
         move_uploaded_file($file_loc,$folder.$file);
+
+        $sql = "UPDATE infos2 SET name='".$_POST['name']."', email='".$_POST['email']."',address='".$_POST['address']."',class ='".$_POST['class']."',roll ='".$_POST['roll']."',hobby='".$checkBox."',gender='".$_POST['gender']."',photo ='".$file."' WHERE id=".$_POST['id'];
+	 }else{
+	 	$sql = "UPDATE infos2 SET name='".$_POST['name']."', email='".$_POST['email']."',address='".$_POST['address']."',class ='".$_POST['class']."',roll ='".$_POST['roll']."',hobby='".$checkBox."',gender='".$_POST['gender']."' WHERE id=".$_POST['id'];
 	 }
 	 
-	 $sql = "UPDATE infos2 SET name='".$_POST['name']."', email='".$_POST['email']."',address='".$_POST['address']."',class ='".$_POST['class']."',roll ='".$_POST['roll']."',hobby='".$checkBox."',gender='".$_POST['gender']."',photo ='".$file."' WHERE id=".$_POST['id'];
 	if ($conn->query($sql) === TRUE) {
 		echo "Record updated successfully ";
 	} else {
@@ -91,7 +97,7 @@ if (!$conn) {
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Sristiweb</title>
+	<title>Registration</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/materialize.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -100,7 +106,7 @@ if (!$conn) {
 <body>
 	<nav class="purple darken-3" role="navigation">
 	    <div class="nav-wrapper container">
-	      <a id="logo-container" href="#" class="brand-logo">Sristiweb.com</a>
+	      <a id="logo-container" href="#" class="brand-logo">Registration Form</a>
 
 	      <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
 	        <li><a href="#"></a></li>
@@ -260,7 +266,7 @@ if (!$conn) {
 	<div class="footer-copyright">
       <nav class="purple darken-3" role="navigation">
 	    <div class="nav-wrapper container">
-	      <p>Copyright &copy; sristiweb.com</p>
+	      <p>Copyright &copy; info.com</p>
 
 	      <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
 	        <li><a href="#"></a></li>
